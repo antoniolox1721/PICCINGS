@@ -178,7 +178,7 @@ public class StructureInspectionMissionView extends MissionBaseView {
     }
 
     @Override
-    protected void onConfigurationChanged(Configuration newConfig) {
+    public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
         // Re-initialize layout based on new orientation
@@ -319,11 +319,23 @@ public class StructureInspectionMissionView extends MissionBaseView {
             btnAdjustPosition.setEnabled(false);
         }
 
+        // Update the start button text based on mission state
         if (isMissionPaused || missionPausedForPhotoReview) {
+            btnStartMission.setText("Continuar Missão");
             btnPause.setChecked(true); // Show resume icon
-            btnStartMission.setEnabled(true);
-            btnPause.setEnabled(false);
+        } else {
+            btnStartMission.setText("Iniciar Missão");
+            btnPause.setChecked(false); // Show pause icon
         }
+
+        // Restore button states based on mission state
+        btnStartMission.setEnabled((!inspectionPoints.isEmpty() && !photoPoints.isEmpty()) || isMissionPaused || missionPausedForPhotoReview);
+        btnPause.setEnabled(waypointMissionOperator != null &&
+                waypointMissionOperator.getCurrentState() == WaypointMissionState.EXECUTING &&
+                !isMissionPaused && !missionPausedForPhotoReview);
+        btnStopMission.setEnabled(waypointMissionOperator != null &&
+                (waypointMissionOperator.getCurrentState() == WaypointMissionState.EXECUTING ||
+                        waypointMissionOperator.getCurrentState() == WaypointMissionState.EXECUTION_PAUSED));
 
         // Update CSV info
         if (!inspectionPoints.isEmpty() || !photoPoints.isEmpty()) {
