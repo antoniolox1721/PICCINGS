@@ -30,7 +30,7 @@
         android:name=".internal.controller.DJISampleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/sample_app_name"
+        android:label="PowerLineDrone"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:extractNativeLibs="true"
@@ -52,7 +52,7 @@
 
         <activity
             android:name="com.dji.sdk.sample.internal.controller.MainActivity"
-            android:label="@string/sample_app_name"
+            android:label="PowerLineDrone"
             android:screenOrientation="fullSensor"
             android:launchMode="singleTop"
             android:configChanges="orientation|keyboardHidden|screenSize"
