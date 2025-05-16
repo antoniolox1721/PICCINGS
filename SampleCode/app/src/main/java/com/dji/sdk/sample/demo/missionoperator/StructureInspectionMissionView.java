@@ -1537,6 +1537,7 @@ public class StructureInspectionMissionView extends MissionBaseView implements P
     }
 
     // Method to take photos manually (used during mission and for manual photo button)
+    // Method to take photos manually (always simulates for now)
     private void takePhoto() {
         // COMMENTED OUT FOR FUTURE USE - Real camera functionality
     /*
@@ -1588,32 +1589,28 @@ public class StructureInspectionMissionView extends MissionBaseView implements P
         post(new Runnable() {
             @Override
             public void run() {
-                // Add small delay to ensure bitmap is ready
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (lastPhotoTaken != null) {
-                            showPhotoConfirmationDialog(lastPhotoTaken);
-                        } else {
-                            Log.e(TAG, "lastPhotoTaken is null!");
-                            // Create emergency placeholder photo if null
-                            Bitmap placeholder = Bitmap.createBitmap(640, 480, Bitmap.Config.ARGB_8888);
-                            placeholder.eraseColor(Color.BLUE);
-                            showPhotoConfirmationDialog(placeholder);
-                        }
-                    }
-                }, 200);
+                showPhotoConfirmationDialog(lastPhotoTaken);
             }
         });
         //}
     }
 
     // Method to show photo confirmation dialog with the new layout
+    // Method to show photo confirmation dialog with orientation support
     private void showPhotoConfirmationDialog(Bitmap photo) {
         Log.d(TAG, "Showing photo confirmation dialog");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_photo_confirmation, null);
+
+        // Check orientation and use appropriate layout
+        int orientation = getResources().getConfiguration().orientation;
+        View dialogView;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_photo_confirmation_land, null);
+        } else {
+            dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_photo_confirmation, null);
+        }
+
         builder.setView(dialogView);
 
         // Set up the dialog components

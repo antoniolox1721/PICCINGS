@@ -57,7 +57,7 @@
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/button_bg_photo"
                 android:textColor="#FFFFFF"
-                android:text="Verif. Photo"
+                android:text= "Foto Debug"
                 android:textSize="12sp" />
 
             <Button
