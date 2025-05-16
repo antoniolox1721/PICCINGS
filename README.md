@@ -1,154 +1,161 @@
-# [MSDK V5 Released](https://github.com/dji-sdk/Mobile-SDK-Android-V5)
+# PICCINGS
 
-MSDK V5 Supported Product:
-* [DJI Mavic 3 Enterprise Series](https://www.dji.com/cn/mavic-3-enterprise)
-* [M30 Series](https://www.dji.com/matrice-30?site=brandsite&from=nav)
-* [M300 RTK](https://www.dji.com/matrice-300?site=brandsite&from=nav)
+![PICCINGS Logo](docs/images/logo.png)
 
-# DJI Mobile SDK V4 for Android Latest Version 4.18
+**Power Infrastructure Capture and Control Integrated Navigation Guidance System**
 
-## What Is This?
+PICCINGS is an Android application that revolutionizes power transmission line inspection by providing autonomous drone flight control and automated image acquisition for infrastructure analysis.
 
-The DJI Mobile SDK enables you to automate your DJI Product. You can control flight, and many subsystems of the product including the camera and gimbal. Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
+## Project Overview
 
-## Integration
+Power transmission infrastructure maintenance traditionally depends on manual inspections that involve high operational costs, safety risks, and low efficiency. PICCINGS addresses these challenges by enabling fully autonomous drone missions for power line inspection with precise positioning and standardized image capture.
 
-Declare dependency via Maven:
+Developed in partnership with EDP and Labelec Laboratory, this solution enables power utility companies to:
+- Reduce inspection costs
+- Improve worker safety
+- Collect standardized, high-quality visual data
+- Identify infrastructure issues early
+- Optimize inspection routes
 
-~~~xml
-<dependency>
-    <groupId>com.dji</groupId>
-    <artifactId>dji-sdk</artifactId>
-    <version>4.18</version>
-</dependency>
+## Key Features
 
-<dependency>
-    <groupId>com.dji</groupId>
-    <artifactId>dji-sdk-provided</artifactId>
-    <version>4.18</version>
-</dependency>
-~~~
+### Mission Planning & Execution
+- **Structure Import**: Load structure coordinates from CSV files
+- **Photo Position Import**: Define standardized photo positions relative to structures
+- **Autonomous Flight**: Complete mission execution without manual coordinate entry
+- **Waypoint Navigation**: Precise positioning for each inspection point
+- **Photo Review**: On-the-fly review of captured images with accept/reject options
 
-or Gradle:
+### User Interface
+- **Adaptive Layouts**: Optimized for both portrait and landscape orientations
+- **Real-time Status**: Live mission progress and drone telemetry
+- **Mission Controls**: Start, pause, resume, and stop capabilities
+- **Photo Gallery**: Browse, view, share, and manage captured images
 
-~~~groovy
-compile 'com.dji:dji-sdk:4.18'
-provided 'com.dji:dji-sdk-provided:4.18'
-~~~
+### Media Management
+- **Photo Capture**: Automated image acquisition at inspection points
+- **Manual Mode**: Option for manual photo capture when needed
+- **Image Storage**: Local storage with organized file structure
+- **Photo Review**: Popup confirmation dialogs for immediate quality control
 
-For further detail on how to integrate the DJI Android SDK into your Android Studio project, please check the [Integrate SDK into Application](http://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html#import-maven-dependency) tutorial.
+### Telemetry
+- **Drone Status**: Real-time connection, model, and battery information
+- **Position Data**: Current drone location coordinates and altitude
+- **Mission Progress**: Structure and photo completion tracking
 
-## Running the SDK Sample Code
+## Technology
 
-Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#android-sample-app) to immediately run code and see how the DJI Mobile SDK can be used.
+PICCINGS is built using:
+- **Java** for Android application development
+- **DJI Mobile SDK** for drone communication and control
+- **Android UI Toolkit** for the user interface
+- **CSV Parsing** for mission data import
 
-One of DJI's aircraft or handheld cameras will be required to run the sample application.
+## Installation
 
-## Development Workflow 
+### Prerequisites
+- Android device running Android 6.0 (Marshmallow) or higher
+- DJI drone compatible with Mobile SDK (Mavic, Phantom, or Matrice series)
+- DJI Go 4 app installed (for initial drone setup)
 
-From registering as a developer, to deploying an application, the following will take you through the full Mobile SDK Application development process:
+### Setup
+1. Clone the repository:
+   ```
+   git clone https://github.com/antoniolox1721/PICCINGS.git
+   ```
 
-- [Prerequisites](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-prerequisits.html)
-- [Register as DJI Developer & Download SDK](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-register.html)
-- [Integrate SDK into Application](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-integrate.html)
-- [Run Application](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-run.html)
-- [Testing, Profiling & Debugging](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-testing.html)
-- [Deploy](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-deploy.html)
+2. Open the project in Android Studio
 
-## Sample Projects & Tutorials
+3. Build and install the application to your Android device:
+   ```
+   ./gradlew assembleDebug
+   ```
+   
+4. Alternatively, download the latest release APK from the [Releases page](https://github.com/antoniolox1721/PICCINGS/releases)
 
-Several Android tutorials are provided as examples on how to use different features of the Mobile SDK and debug tools includes:
+## Usage
 
-- [Application Activation and Aircraft Binding](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/ActivationAndBinding.html)
-- [Getting Started with UX SDK](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/UXSDKDemo.html)
-- [Camera Application](https://developer.dji.com/mobile-sdk/documentation/android-tutorials/FPVDemo.html)
-- [MapView and Waypoint Application (GaodeMap)](https://developer.dji.com/mobile-sdk/documentation/android-tutorials/GSDemo-Gaode-Map.html)
-- [MapView and Waypoint Application (GoogleMap)](https://developer.dji.com/mobile-sdk/documentation/android-tutorials/GSDemo-Google-Map.html)
-- [TapFly and ActiveTrack Application](https://developer.dji.com/mobile-sdk/documentation/android-tutorials/P4MissionsDemo.html)
-- [Simulator Application](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/SimulatorDemo.html)
-- [GEO System Application](http://developer.dji.com/mobile-sdk/documentation/android-tutorials/GEODemo.html)
+### Initial Setup
+1. Connect your Android device to the DJI drone remote controller
+2. Launch the PICCINGS application
+3. Wait for the drone connection status to change to "Connected"
 
-## Learn More about DJI Products and the Mobile SDK
+### Mission Planning
+1. Tap "Import Structures" to load your structure coordinates CSV
+   - CSV format: latitude,longitude,ground_altitude,structure_height
+2. Tap "Import Positions" to load your photo positions CSV
+   - CSV format: offset_x,offset_y,offset_z,gimbal_pitch
 
-Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk/documentation/introduction/index.html) for more details.
+### Mission Execution
+1. Tap "Start Mission" to begin the automated inspection
+2. The drone will navigate to each structure and capture photos
+3. When photo review is required, confirm or reject the photo
+4. Use Pause/Resume to control mission flow as needed
+5. To end the mission early, tap "Stop" to return to home position
 
-## DJI Mobile UX SDK
+### Photo Gallery
+1. Tap "Gallery" to view all captured images
+2. Select any photo to view in full screen
+3. Use the Share or Delete options to manage your photos
 
-DJI Mobile UX SDK is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UXSDK-Android).
+## CSV File Formats
 
-## Device Health Information Json File
+### Structures CSV
+```
+latitude,longitude,ground_altitude,structure_height
+38.736946,-9.142685,10.5,25.0
+38.737012,-9.143998,11.2,28.5
+...
+```
 
-You can find the **hms.json** and **`hms_match_sdkerror.json`** files in this repo's root folder.
+### Photo Positions CSV
+```
+offset_x,offset_y,offset_z,gimbal_pitch
+5.0,0.0,3.0,-30.0
+-5.0,0.0,3.0,-30.0
+0.0,0.0,5.0,-90.0
+...
+```
 
-It contains error code and detailed description for device components. Only supported by some components of Matrice 300 RTK and Zenmuse H20 series.
+## Project Team
 
-It is recommended to use device health information to replace old diagnostics for flight controller and RTK. There will be a few duplicated component error for gimbal, battery, perception module on Matrice 300 RTK.
+This project is developed by a team from Instituto Superior Técnico in partnership with EDP:
 
-Please refer to the table below for duplicated error:
+- **Ricardo Nobre**: Testing and Documentation
+- **João Henriques**: Camera and Multimedia Management
+- **Miguel Baia**: Basic Flight Control
+- **Henrique Martins**: Basic User Interface
+- **Luís Almeida**: Waypoints and Missions
+- **António Alves**: Advanced UI Development
 
-| DJIDiagnosticsError | Enum Value | AlarmId |
-|:------------- |:---------------:| -------------:|
-| `BATTERY_DISCHARGE_OVER_CURRENT`  | 3001 | 0x110B0001|
-| `BATTERY_DISCHARGE_OVER_HEAT` | 3002  | 0x110B0002 |
-| `BATTERY_LOW_TEMPERATURE` | 3003  | 0x110B0003 |
-| `BATTERY_CELL_BROKEN` | 3004 | 0x110B0006 |
-| `GIMBAL_CONNECT_TO_FC_ERROR` | 2005 | 0x1D030001 |
-| `GIMBAL_GYROSCOPE_ERROR` | 2001 | 0x1D040002 |
-| `GIMBAL_PITCH_ERROR` | 2002 | 0x1D040004 |
-| `GIMBAL_ROLL_ERROR` | 2003 | 0x1D040003 |
-| `GIMBAL_YAW_ERROR` | 2004 | 0x1D040005 |
+## Scientific Advisors
+- **André Coelho** (EDP)
+- **Rui Martins** (EDP)
 
+## Project Coordinators
+- **Luis Caldas de Oliveira** (Coordinator)
+- **Rita Cunha** (Mentor)
 
-## ProGuard
+## Contributing
 
-If you're planning on optimizing your app with [ProGuard](https://developer.android.com/studio/build/shrink-code.html), you can add the following rules to your app's `proguard.cfg` file:
+We welcome contributions to the PICCINGS project. Please feel free to submit pull requests or open issues to discuss potential improvements.
 
-- For **AAR** file, please use the following rule:
-
-~~~
-"-libraryjars ./PATH_TO_THIS_FILE/dji_android_sdk.aar"
-~~~
-
-- For **API Library** folder, please use the rules in [proguard-project](<https://github.com/dji-sdk/Mobile-SDK-Android/blob/master/Sample Code/app/proguard-rules.pro>) file. 
-
-> **Note**: There are two types of DJI Android SDK: **AAR** and **API Library folder**, you can download them from DJI Developer Website: <http://developer.dji.com/mobile-sdk/downloads/>.
-
-## SDK Keys
-
-SDK Keys can be used as an alternative interface to access the product.
-
-A detailed introduction for SDK Keys is [here](./docs/README-KeyedInterface.md).
-
-## Missions Refactor
-
-Missions are an important part of the SDK as they allow developers to automate DJI's products using a simple, high level interface. In 4.0, missions are being refactored to be more robust and easier to manage.
-
-A detailed introduction for missions is [here](./docs/README-Mission.md).
-
-## Android Bridge App
-
-Please check this [link](https://github.com/dji-sdk/Android-Bridge-App) to download the apk of the Android Bridge App apk file.
-
-## SDK API Reference
-
-[**Android SDK API Documentation**](http://developer.dji.com/api-reference/android-api/index.html)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-The DJI Android SDK is dynamically linked with unmodified libraries of <a href=http://ffmpeg.org>FFmpeg</a> licensed under the <a href=https://www.gnu.org/licenses/lgpl-2.1.html.en>LGPLv2.1</a>. The source code of these FFmpeg libraries, the compilation instructions, and the LGPL v2.1 license are provided in [Github](https://github.com/dji-sdk/FFmpeg).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The DJI Android SDK is dynamically linked with unmodified libraries of <a href=https://mvnrepository.com/artifact/com.vividsolutions/jts/1.8>JTS Topology Suite</a> licensed under the <a href=https://www.gnu.org/licenses/lgpl-2.1.html.en>LGPLv2.1</a>.
+## Acknowledgments
 
-## Support
+- EDP for providing project sponsorship and expertise
+- Labelec Laboratory for technical support
+- DJI for the Mobile SDK that makes drone control possible
 
-You can get support from DJI with the following methods:
+---
 
-- Post questions in DJI Developer Forums:
-[**Chinese Forum**](https://djisdksupport.zendesk.com/hc/zh-cn/community/topics)
-, [**English Forum**](https://djisdksupport.zendesk.com/hc/en-us/community/topics)
-
-## Join Us
-
-DJI is looking for all kinds of Software Engineers to continue building the Future of Possible. Available positions in Shenzhen, China and around the world. If you are interested, please send your resume to <software-sz@dji.com>. For more details, and list of all our global offices, please check <https://we.dji.com/jobs_en.html>.
-
-DJI 招软件工程师啦，based在深圳，如果你想和我们一起把DJI产品做得更好，请发送简历到 <software-sz@dji.com>.  或者在这里提交您的简历：https://we.dji.com/zh-CN/position/detail?positionId=1382258951346253824 更多岗位详情请浏览 <https://we.dji.com/zh-CN/social>.
+*PICCINGS - Making power infrastructure inspection safer, faster, and more efficient.*
