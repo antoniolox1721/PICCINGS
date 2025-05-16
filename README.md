@@ -1,14 +1,14 @@
-# PICCINGS
+# PowerLineDrone
 
-![PICCINGS Logo](docs/images/logo.png)
+![PowerLineDrone Logo](docs/images/logo.png)
 
 **Power Infrastructure Capture and Control Integrated Navigation Guidance System**
 
-PICCINGS is an Android application that revolutionizes power transmission line inspection by providing autonomous drone flight control and automated image acquisition for infrastructure analysis.
+PowerLineDrone is an Android application that revolutionizes power transmission line inspection by providing autonomous drone flight control and automated image acquisition for infrastructure analysis.
 
 ## Project Overview
 
-Power transmission infrastructure maintenance traditionally depends on manual inspections that involve high operational costs, safety risks, and low efficiency. PICCINGS addresses these challenges by enabling fully autonomous drone missions for power line inspection with precise positioning and standardized image capture.
+Power transmission infrastructure maintenance traditionally depends on manual inspections that involve high operational costs, safety risks, and low efficiency. PowerLineDrone addresses these challenges by enabling fully autonomous drone missions for power line inspection with precise positioning and standardized image capture.
 
 Developed in partnership with EDP and Labelec Laboratory, this solution enables power utility companies to:
 - Reduce inspection costs
@@ -45,7 +45,7 @@ Developed in partnership with EDP and Labelec Laboratory, this solution enables 
 
 ## Technology
 
-PICCINGS is built using:
+PowerLineDrone is built using:
 - **Java** for Android application development
 - **DJI Mobile SDK** for drone communication and control
 - **Android UI Toolkit** for the user interface
@@ -61,7 +61,7 @@ PICCINGS is built using:
 ### Setup
 1. Clone the repository:
    ```
-   git clone https://github.com/antoniolox1721/PICCINGS.git
+   git clone https://github.com/antoniolox1721/PowerLineDrone.git
    ```
 
 2. Open the project in Android Studio
@@ -71,13 +71,13 @@ PICCINGS is built using:
    ./gradlew assembleDebug
    ```
    
-4. Alternatively, download the latest release APK from the [Releases page](https://github.com/antoniolox1721/PICCINGS/releases)
+4. Alternatively, download the latest release APK from the [Releases page](https://github.com/antoniolox1721/PowerLineDrone/releases)
 
 ## Usage
 
 ### Initial Setup
 1. Connect your Android device to the DJI drone remote controller
-2. Launch the PICCINGS application
+2. Launch the PowerLineDrone application
 3. Wait for the drone connection status to change to "Connected"
 
 ### Mission Planning
@@ -138,7 +138,7 @@ This project is developed by a team from Instituto Superior Técnico in partners
 
 ## Contributing
 
-We welcome contributions to the PICCINGS project. Please feel free to submit pull requests or open issues to discuss potential improvements.
+We welcome contributions to the PowerLineDrone project. Please feel free to submit pull requests or open issues to discuss potential improvements.
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -158,4 +158,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-*PICCINGS - Making power infrastructure inspection safer, faster, and more efficient.*
+*PowerLineDrone - Making power infrastructure inspection safer, faster, and more efficient.*
