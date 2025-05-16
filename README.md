@@ -2,160 +2,160 @@
 
 ![PowerLineDrone Logo](docs/images/logo.png)
 
-**Power Infrastructure Capture and Control Integrated Navigation Guidance System**
+**Sistema Integrado de Orientação e Navegação para Captura e Controlo de Infraestruturas Elétricas**
 
-PowerLineDrone is an Android application that revolutionizes power transmission line inspection by providing autonomous drone flight control and automated image acquisition for infrastructure analysis.
+PowerLineDrone é uma aplicação Android que revoluciona a inspeção de linhas de transmissão elétrica, fornecendo controlo autónomo de voo de drones e aquisição automatizada de imagens para análise de infraestruturas.
 
-## Project Overview
+## Visão Geral do Projeto
 
-Power transmission infrastructure maintenance traditionally depends on manual inspections that involve high operational costs, safety risks, and low efficiency. PowerLineDrone addresses these challenges by enabling fully autonomous drone missions for power line inspection with precise positioning and standardized image capture.
+A manutenção de infraestruturas de transmissão elétrica tradicionalmente depende de inspeções manuais que envolvem elevados custos operacionais, riscos de segurança e baixa eficiência. O PowerLineDrone aborda estes desafios permitindo missões totalmente autónomas com drones para inspeção de linhas elétricas com posicionamento preciso e captura de imagem padronizada.
 
-Developed in partnership with EDP and Labelec Laboratory, this solution enables power utility companies to:
-- Reduce inspection costs
-- Improve worker safety
-- Collect standardized, high-quality visual data
-- Identify infrastructure issues early
-- Optimize inspection routes
+Desenvolvido em parceria com a EDP e o Laboratório Labelec, esta solução permite às empresas de serviços elétricos:
+- Reduzir custos de inspeção
+- Melhorar a segurança dos trabalhadores
+- Recolher dados visuais padronizados e de alta qualidade
+- Identificar problemas de infraestrutura precocemente
+- Otimizar rotas de inspeção
 
-## Key Features
+## Características Principais
 
-### Mission Planning & Execution
-- **Structure Import**: Load structure coordinates from CSV files
-- **Photo Position Import**: Define standardized photo positions relative to structures
-- **Autonomous Flight**: Complete mission execution without manual coordinate entry
-- **Waypoint Navigation**: Precise positioning for each inspection point
-- **Photo Review**: On-the-fly review of captured images with accept/reject options
+### Planeamento e Execução de Missões
+- **Importação de Estruturas**: Carregamento de coordenadas de estruturas a partir de ficheiros CSV
+- **Importação de Posições de Fotografia**: Definição de posições de fotografia padronizadas relativas às estruturas
+- **Voo Autónomo**: Execução completa da missão sem introdução manual de coordenadas
+- **Navegação por Pontos**: Posicionamento preciso para cada ponto de inspeção
+- **Revisão de Fotografias**: Revisão em tempo real das imagens capturadas com opções de aceitar/rejeitar
 
-### User Interface
-- **Adaptive Layouts**: Optimized for both portrait and landscape orientations
-- **Real-time Status**: Live mission progress and drone telemetry
-- **Mission Controls**: Start, pause, resume, and stop capabilities
-- **Photo Gallery**: Browse, view, share, and manage captured images
+### Interface de Utilizador
+- **Layouts Adaptáveis**: Otimizados para orientações vertical e horizontal
+- **Estado em Tempo Real**: Progresso da missão e telemetria do drone em direto
+- **Controlos de Missão**: Capacidades de iniciar, pausar, retomar e parar
+- **Galeria de Fotografias**: Navegar, visualizar, partilhar e gerir imagens capturadas
 
-### Media Management
-- **Photo Capture**: Automated image acquisition at inspection points
-- **Manual Mode**: Option for manual photo capture when needed
-- **Image Storage**: Local storage with organized file structure
-- **Photo Review**: Popup confirmation dialogs for immediate quality control
+### Gestão de Media
+- **Captura de Fotografias**: Aquisição automatizada de imagens nos pontos de inspeção
+- **Modo Manual**: Opção para captura manual de fotografias quando necessário
+- **Armazenamento de Imagens**: Armazenamento local com estrutura de ficheiros organizada
+- **Revisão de Fotografias**: Diálogos de confirmação para controlo de qualidade imediato
 
-### Telemetry
-- **Drone Status**: Real-time connection, model, and battery information
-- **Position Data**: Current drone location coordinates and altitude
-- **Mission Progress**: Structure and photo completion tracking
+### Telemetria
+- **Estado do Drone**: Informações em tempo real sobre conexão, modelo e bateria
+- **Dados de Posição**: Coordenadas de localização atual do drone e altitude
+- **Progresso da Missão**: Acompanhamento da conclusão de estruturas e fotografias
 
-## Technology
+## Tecnologia
 
-PowerLineDrone is built using:
-- **Java** for Android application development
-- **DJI Mobile SDK** for drone communication and control
-- **Android UI Toolkit** for the user interface
-- **CSV Parsing** for mission data import
+O PowerLineDrone é construído utilizando:
+- **Java** para desenvolvimento de aplicações Android
+- **DJI Mobile SDK** para comunicação e controlo do drone
+- **Android UI Toolkit** para a interface de utilizador
+- **Análise CSV** para importação de dados de missão
 
-## Installation
+## Instalação
 
-### Prerequisites
-- Android device running Android 6.0 (Marshmallow) or higher
-- DJI drone compatible with Mobile SDK (Mavic, Phantom, or Matrice series)
-- DJI Go 4 app installed (for initial drone setup)
+### Pré-requisitos
+- Dispositivo Android a executar Android 6.0 (Marshmallow) ou superior
+- Drone DJI compatível com Mobile SDK (séries Mavic, Phantom ou Matrice)
+- Aplicação DJI Go 4 instalada (para configuração inicial do drone)
 
-### Setup
-1. Clone the repository:
+### Configuração
+1. Clone o repositório:
    ```
    git clone https://github.com/antoniolox1721/PowerLineDrone.git
    ```
 
-2. Open the project in Android Studio
+2. Abra o projeto no Android Studio
 
-3. Build and install the application to your Android device:
+3. Compile e instale a aplicação no seu dispositivo Android:
    ```
    ./gradlew assembleDebug
    ```
    
-4. Alternatively, download the latest release APK from the [Releases page](https://github.com/antoniolox1721/PowerLineDrone/releases)
+4. Em alternativa, descarregue o ficheiro APK da versão mais recente na [página de Lançamentos](https://github.com/antoniolox1721/PowerLineDrone/releases)
 
-## Usage
+## Utilização
 
-### Initial Setup
-1. Connect your Android device to the DJI drone remote controller
-2. Launch the PowerLineDrone application
-3. Wait for the drone connection status to change to "Connected"
+### Configuração Inicial
+1. Ligue o seu dispositivo Android ao comando do drone DJI
+2. Inicie a aplicação PowerLineDrone
+3. Aguarde que o estado de ligação do drone mude para "Ligado"
 
-### Mission Planning
-1. Tap "Import Structures" to load your structure coordinates CSV
-   - CSV format: latitude,longitude,ground_altitude,structure_height
-2. Tap "Import Positions" to load your photo positions CSV
-   - CSV format: offset_x,offset_y,offset_z,gimbal_pitch
+### Planeamento de Missão
+1. Toque em "Importar Estruturas" para carregar o seu ficheiro CSV de coordenadas de estruturas
+   - Formato CSV: latitude,longitude,altitude_do_solo,altura_da_estrutura
+2. Toque em "Importar Posições" para carregar o seu ficheiro CSV de posições de fotografias
+   - Formato CSV: deslocamento_x,deslocamento_y,deslocamento_z,inclinação_gimbal
 
-### Mission Execution
-1. Tap "Start Mission" to begin the automated inspection
-2. The drone will navigate to each structure and capture photos
-3. When photo review is required, confirm or reject the photo
-4. Use Pause/Resume to control mission flow as needed
-5. To end the mission early, tap "Stop" to return to home position
+### Execução de Missão
+1. Toque em "Iniciar Missão" para começar a inspeção automatizada
+2. O drone navegará para cada estrutura e capturará fotografias
+3. Quando for necessária a revisão de fotografias, confirme ou rejeite a fotografia
+4. Utilize Pausa/Retomar para controlar o fluxo da missão conforme necessário
+5. Para terminar a missão antecipadamente, toque em "Parar" para retornar à posição inicial
 
-### Photo Gallery
-1. Tap "Gallery" to view all captured images
-2. Select any photo to view in full screen
-3. Use the Share or Delete options to manage your photos
+### Galeria de Fotografias
+1. Toque em "Galeria" para visualizar todas as imagens capturadas
+2. Selecione qualquer fotografia para visualizar em ecrã inteiro
+3. Utilize as opções Partilhar ou Eliminar para gerir as suas fotografias
 
-## CSV File Formats
+## Formatos de Ficheiros CSV
 
-### Structures CSV
+### CSV de Estruturas
 ```
-latitude,longitude,ground_altitude,structure_height
+latitude,longitude,altitude_do_solo,altura_da_estrutura
 38.736946,-9.142685,10.5,25.0
 38.737012,-9.143998,11.2,28.5
 ...
 ```
 
-### Photo Positions CSV
+### CSV de Posições de Fotografias
 ```
-offset_x,offset_y,offset_z,gimbal_pitch
+deslocamento_x,deslocamento_y,deslocamento_z,inclinação_gimbal
 5.0,0.0,3.0,-30.0
 -5.0,0.0,3.0,-30.0
 0.0,0.0,5.0,-90.0
 ...
 ```
 
-## Project Team
+## Equipa do Projeto
 
-This project is developed by a team from Instituto Superior Técnico in partnership with EDP:
+Este projeto é desenvolvido por uma equipa do Instituto Superior Técnico em parceria com a EDP:
 
-- **Ricardo Nobre**: Testing and Documentation
-- **João Henriques**: Camera and Multimedia Management
-- **Miguel Baia**: Basic Flight Control
-- **Henrique Martins**: Basic User Interface
-- **Luís Almeida**: Waypoints and Missions
-- **António Alves**: Advanced UI Development
+- **Ricardo Nobre**: Testes e Documentação
+- **João Henriques**: Gestão de Câmara e Multimédia
+- **Miguel Baia**: Controlo Básico de Voo
+- **Henrique Martins**: Interface Básica de Utilizador
+- **Luís Almeida**: Pontos de Navegação e Missões
+- **António Alves**: Desenvolvimento Avançado de Interface
 
-## Scientific Advisors
+## Consultores Científicos
 - **André Coelho** (EDP)
 - **Rui Martins** (EDP)
 
-## Project Coordinators
-- **Luis Caldas de Oliveira** (Coordinator)
-- **Rita Cunha** (Mentor)
+## Coordenadores do Projeto
+- **Luis Caldas de Oliveira** (Coordenador)
+- **Rita Cunha** (Mentora)
 
-## Contributing
+## Contribuições
 
-We welcome contributions to the PowerLineDrone project. Please feel free to submit pull requests or open issues to discuss potential improvements.
+Recebemos contribuições para o projeto PowerLineDrone. Sinta-se à vontade para submeter pull requests ou abrir issues para discutir potenciais melhorias.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Faça fork do repositório
+2. Crie a sua branch de funcionalidade (`git checkout -b funcionalidade/recurso-incrivel`)
+3. Confirme as suas alterações (`git commit -m 'Adicionar algum recurso incrível'`)
+4. Envie para a branch (`git push origin funcionalidade/recurso-incrivel`)
+5. Abra um Pull Request
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este projeto está licenciado sob a Licença MIT - consulte o ficheiro [LICENSE](LICENSE) para detalhes.
 
-## Acknowledgments
+## Agradecimentos
 
-- EDP for providing project sponsorship and expertise
-- Labelec Laboratory for technical support
-- DJI for the Mobile SDK that makes drone control possible
+- EDP por fornecer patrocínio e conhecimentos para o projeto
+- Laboratório Labelec pelo apoio técnico
+- DJI pelo Mobile SDK que torna possível o controlo de drones
 
 ---
 
-*PowerLineDrone - Making power infrastructure inspection safer, faster, and more efficient.*
+*PowerLineDrone - Tornando a inspeção de infraestruturas elétricas mais segura, mais rápida e mais eficiente.*
